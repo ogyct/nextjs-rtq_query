@@ -1,11 +1,15 @@
 import React from 'react';
 import {useGetPostsQuery} from "../../api/postsApi";
 import PostsComponent from "../../components/PostsComponent";
-import {Button, Center, Flex} from "@chakra-ui/react";
+import {Button} from "@chakra-ui/react";
 import NextLink from "next/link";
+import ErrorComponent from "../../components/ErrorComponent";
 
 const PostsPage = () => {
-    const {data} = useGetPostsQuery();
+    const {data, isError} = useGetPostsQuery();
+    if (isError) {
+        return <ErrorComponent/>
+    }
     return (
         <>
             <NextLink href={"/posts/create"}>

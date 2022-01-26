@@ -1,4 +1,5 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
+import posts from "../pages/posts";
 
 export interface Post {
     id?: number,
@@ -13,8 +14,13 @@ export const postsApi = createApi({
     tagTypes: ['Post'],
     endpoints: (builder) => ({
         getPosts: builder.query<Post[], void>({
-            query: () => `posts?userId=1`,
-            providesTags: _ => ['Post']
+            query: () => ({
+                url: `posts?userId=1`,
+                // validateStatus: () => {
+                //     return true;
+                // }
+            }),
+            providesTags: _ => ['Post'],
         }),
         getPostById: builder.query<Post, string>({
             query: (id) => `posts/${id}`,

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@chakra-ui/react": "^1.7.2",
+    "@chakra-ui/storybook-addon": "^1.0.1",
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
     "@reduxjs/toolkit": "^1.6.2",
