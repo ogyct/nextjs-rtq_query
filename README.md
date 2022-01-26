@@ -7,11 +7,14 @@ Built using next.js, chakra-ui, rtk-query, json-server
 
 ## Test server
 
-Install json server 
+### Install json server 
 
 `npm install -g json-server
 `
 
-Serve
+### Serve
 
 ` json-server --watch server/db.json --port 5000`
+
+### Run
+`npm run dev`
